@@ -1,0 +1,11 @@
+import fs from "fs";
+import path from "path";
+import { Podcast } from "../models/podcastModel";
+
+const dataPath = path.join(__dirname, "../repositories/podcasts.json");
+
+export const repositoryPodcasts = async (): Promise<Podcast[]> => {
+  const rawData = fs.readFileSync(dataPath, "utf-8");
+  const jsonFile = JSON.parse(rawData);
+  return jsonFile;
+};
