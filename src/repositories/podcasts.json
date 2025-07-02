@@ -10,5 +10,11 @@
     "episode": "SACANI RESPONDE [VIDA NO UNIVERSO]",
     "videoId": "N209olqF23Q",
     "categories": ["ciência", "tecnologia"]
+  },
+  {
+    "podcastName": "inteligência ltda",
+    "episode": "DA INVENÇÃO DO COMPUTADOR À INTELIGÊNCIA ARTIFICIAL",
+    "videoId": "jVxzpiDJ9Qk",
+    "categories": ["ia", "tecnologia"]
   }
 ]
