@@ -1,7 +1,12 @@
 import * as http from "http";
+import { getEpisodeList } from "./controllers/podcastController";
 
 const server = http.createServer(
-  (req: http.IncomingMessage, res: http.ServerResponse) => {}
+  async (req: http.IncomingMessage, res: http.ServerResponse) => {
+    if (req.method === "GET") {
+      await getEpisodeList(req, res);
+    }
+  }
 );
 
 const port = process.env.PORT;
