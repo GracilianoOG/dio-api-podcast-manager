@@ -1,18 +1,7 @@
+import { repositoryPodcasts } from "../repositories/podcastsRepository";
+
 export const listEpisodes = async () => {
-  const data = [
-    {
-      podcastName: "flow",
-      episode: "FABIO AKITA - Flow #458",
-      videoId: "sf4Gxf0LiKo",
-      categories: ["ia", "tecnologia"],
-    },
-    {
-      podcastName: "flow",
-      episode: "SACANI RESPONDE [VIDA NO UNIVERSO]",
-      videoId: "N209olqF23Q",
-      categories: ["ciência", "tecnologia"],
-    },
-  ];
+  const data = await repositoryPodcasts();
 
   return data;
 };
