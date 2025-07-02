@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Um app ao estilo da Netflix que centraliza diferentes episódios de podcasts separados por categoria.",
   "main": "index.js",
+  "type": "module",
   "directories": {
     "doc": "docs"
   },
