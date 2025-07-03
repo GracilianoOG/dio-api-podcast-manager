@@ -10,7 +10,7 @@ export const initApp = async (
   req: http.IncomingMessage,
   res: http.ServerResponse
 ) => {
-  const [baseURL, queryString] = req.url?.split("?") ?? ["", ""];
+  const baseURL = req.url?.split("?")[0];
 
   if (req.method === HttpMethods.GET && baseURL === Routes.LIST) {
     await getEpisodeList(req, res);
