@@ -13,7 +13,7 @@ export const filterEpisodes = async (
   const queryString = podcastName?.split("?p=")[1] ?? "";
   const data = await repositoryPodcasts(queryString);
 
-  if (data) {
+  if (data.length) {
     responseFormat.statusCode = StatusCodes.OK;
   } else {
     responseFormat.statusCode = StatusCodes.NO_CONTENT;
