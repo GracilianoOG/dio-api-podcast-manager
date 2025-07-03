@@ -18,6 +18,7 @@ export const getFilteredEpisodes = async (
   res: ServerResponse
 ) => {
   const content = await filterEpisodes(req.url);
-  res.writeHead(StatusCodes.OK, { "content-type": ContentTypes.JSON });
-  res.end(JSON.stringify(content));
+
+  res.writeHead(content.statusCode, { "content-type": ContentTypes.JSON });
+  res.end(JSON.stringify(content.body));
 };
