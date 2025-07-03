@@ -1,7 +1,6 @@
 import { IncomingMessage, ServerResponse } from "http";
 import { listEpisodes } from "../services/episodeListService";
 import { filterEpisodes } from "../services/episodeFilterService";
-import { StatusCodes } from "../utils/statusCodes";
 import { ContentTypes } from "../utils/contentTypes";
 
 export const getEpisodeList = async (
@@ -10,7 +9,8 @@ export const getEpisodeList = async (
 ) => {
   const content = await listEpisodes();
   res.writeHead(content.statusCode, { "content-type": ContentTypes.JSON });
-  res.end(JSON.stringify(content.body));
+  res.write(JSON.stringify(content.body));
+  res.end();
 };
 
 export const getFilteredEpisodes = async (
@@ -18,7 +18,7 @@ export const getFilteredEpisodes = async (
   res: ServerResponse
 ) => {
   const content = await filterEpisodes(req.url);
-
   res.writeHead(content.statusCode, { "content-type": ContentTypes.JSON });
-  res.end(JSON.stringify(content.body));
+  res.write(JSON.stringify(content.body));
+  res.end();
 };
