@@ -9,8 +9,8 @@ export const getEpisodeList = async (
   res: ServerResponse
 ) => {
   const content = await listEpisodes();
-  res.writeHead(StatusCodes.OK, { "content-type": ContentTypes.JSON });
-  res.end(JSON.stringify(content));
+  res.writeHead(content.statusCode, { "content-type": ContentTypes.JSON });
+  res.end(JSON.stringify(content.body));
 };
 
 export const getFilteredEpisodes = async (
